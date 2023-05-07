@@ -13,12 +13,12 @@
 #include <sys/stat.h>
 #include <signal.h>
 #include <fcntl.h>
+#include "macros.h"
 
-/************* MACROS **************/
 
-#include "macros.h" /* for msg help and prompt */
-
-/************* STRUCTURES **************/
+/*
+ * STRUCTS
+ */
 
 /**
  * struct info- struct for the program's data
