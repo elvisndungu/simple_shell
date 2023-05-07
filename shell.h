@@ -44,11 +44,6 @@ typedef struct info
 	char **alias_list;
 } data_of_program;
 
-/*
- * STRUCTS START
- *
- */
-
 
 /**
  * struct builtins - structure for the built-in commands
@@ -62,7 +57,10 @@ typedef struct builtins
 } builtins;
 
 
-
+/*
+ * STRUCTS START
+ *
+ */
 
 
 /*========  shell.c  ========*/
