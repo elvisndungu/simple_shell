@@ -17,19 +17,20 @@
 
 
 /*
- * STRUCTS
+ * STRUCTS START
+ *
  */
 
 /**
- * struct info- struct for the program's data
- * @program_name: the name of the executable
- * @input_line: pointer to the input read for _getline
- * @command_name: pointer to the first command typed by the user
- * @exec_counter: number of excecuted comands
- * @file_descriptor: file descriptor to the input of commands
- * @tokens: pointer to array of tokenized input
- * @env: copy of the environ
- * @alias_list: array of pointers with aliases.
+ * struct info- structure containing the data for the program
+ * @program_name: the name of the executable program
+ * @input_line: pointer to the input read using _getline function
+ * @command_name: pointer to the first command entered by the user
+ * @exec_counter: count of executed commands
+ * @file_descriptor: file descriptor for the input of commands
+ * @tokens: pointer to an array of tokenized input
+ * @env: copy of the environment variables
+ * @alias_list: array of pointers storing aliases
  */
 typedef struct info
 {
@@ -44,9 +45,9 @@ typedef struct info
 } data_of_program;
 
 /**
- * struct builtins - struct for the builtins
- * @builtin: the name of the builtin
- * @function: the associated function to be called for each builtin
+ * struct builtins - structure for the built-in commands
+ * @builtin: the name of the built-in command
+ * @function: the associated function to be invoked for each built-in command
  */
 typedef struct builtins
 {
