@@ -1,9 +1,9 @@
 
 
 /**
- * free_recurrent_data - free the fields needed each loop
+ * free_recurrent_data - free the flds needed each loop
  * @data: struct of the program's data
- * Return: Nothing
+ * Return: Nada
  */
 void free_recurrent_data(data_of_program *data)
 {
@@ -20,9 +20,9 @@ void free_recurrent_data(data_of_program *data)
 }
 
 /**
- * free_all_data - free all field of the data
+ * free_all_data - free the flds needed each loop
  * @data: struct of the program's data
- * Return: Nothing
+ * Return: Nada
  */
 void free_all_data(data_of_program *data)
 {
@@ -37,10 +37,9 @@ void free_all_data(data_of_program *data)
 }
 
 /**
- * free_array_of_pointers - frees each pointer of an array of pointers and the
- * array too
+ * free_array_of_pointers - free the flds needed for pointer
  * @array: array of pointers
- * Return: nothing
+ * Return: Nada
  */
 void free_array_of_pointers(char **array)
 {
@@ -62,7 +61,7 @@ void free_array_of_pointers(char **array)
  * @string: buffer to save the number as string.
  * @base: base to convert number
  *
- * Return: Nothing.
+ * Return: Nada
  */
 void long_to_string(long number, char *string, int base)
 {
@@ -95,7 +94,7 @@ void long_to_string(long number, char *string, int base)
  * _atoi - convert a string to an integer.
  *
  * @s: pointer to str origen.
- * Return: int of string or 0.
+ * Return: int of string or nil
  */
 int _atoi(char *s)
 {
