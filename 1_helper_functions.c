@@ -1,8 +1,7 @@
 #include "shell.h"
 
 /**
- * count_characters - count the coincidences of character in string.
- *
+ * count_characters - count match of character in string.
  * @string: pointer to str origen.
  * @character: string with  chars to be counted
  * Return: int of string or 0.
@@ -20,7 +19,7 @@ int count_characters(char *string, char *character)
 }
 
 /**
- * _print - writes a array of chars in the standar output
+ * _print - writes a array of chars in the std output
  * @string: pointer to the array of chars
  * Return: the number of bytes writed or .
  * On error, -1 is returned, and errno is set appropriately.
@@ -31,7 +30,7 @@ int _print(char *string)
 }
 
 /**
- * _printe - writes a array of chars in the standar error
+ * _printe - writes a array of chars in the std err
  * @string: pointer to the array of chars
  * Return: the number of bytes writed or .
  * On error, -1 is returned, and errno is set appropriately.
@@ -46,8 +45,7 @@ int _printe(char *string)
  * _print_error - writes a array of chars in the standart error
  * @data: a pointer to the program's data'
  * @errorcode: error code to print
- * Return: the number of bytes writed or .
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: the number of bytes
  */
 int _print_error(int errorcode, data_of_program *data)
 {
@@ -93,7 +91,7 @@ int _print_error(int errorcode, data_of_program *data)
 /**
  * str_length - returns the length of a string.
  * @string: pointer to string.
- * Return: length of string.
+ * Return: len of string.
  */
 int str_length(char *string)
 {
