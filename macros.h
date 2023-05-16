@@ -2,7 +2,7 @@
 
 #define HELPERS_H
 
-#define PROMPT_MSG "dali<3 "
+#define PROMPT_MSG "($) "
 
 #define UNUSED __attribute__((unused))
 
