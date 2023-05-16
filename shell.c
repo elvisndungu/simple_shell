@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[], char *env[])
 {
-	data_of_program data_struct = {NULL}, *data = &data_struct;
+	data_of_program data_struct = {.input_line = NULL}, *data = &data_struct;
 	char *prompt = "";
 	
 	initialise_data(data, argc, argv, env);
@@ -16,8 +16,8 @@ int main(int argc, char *argv[], char *env[])
 	signal(SIGINT, handle_ctrl_c);
 	
 	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO) && argc == 1)
-	{/* We are in the terminal, interactive mode */
-		errno = 2;/*???????*/
+	{
+		errno = 2;
 		prompt = PROMPT_MSG;
 	}
 	errno = 0;
