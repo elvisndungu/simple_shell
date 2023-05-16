@@ -1,4 +1,4 @@
-
+#include "shell.h"
 
 /**
  * free_recurrent_data - free the flds needed each loop

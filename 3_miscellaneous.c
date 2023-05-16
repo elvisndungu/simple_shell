@@ -115,3 +115,4 @@ int check_file(char *full_path)
 	errno = 127;
 	return (127);
 }
+
