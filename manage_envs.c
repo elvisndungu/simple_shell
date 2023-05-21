@@ -41,10 +41,10 @@ char *env_get_key(char *key, data_of_program *data)
 int env_set_key(char *key, char *value, data_of_program *data)
 {
 	int i, key_length = 0, is_new_key = 1;
-	
+
 	if (key == NULL || value == NULL || data->env == NULL)
 		return (1);
-	
+
 	key_length = str_length(key);
 
 	for (i = 0; data->env[i]; i++)
@@ -53,7 +53,7 @@ int env_set_key(char *key, char *value, data_of_program *data)
 		 data->env[i][key_length] == '=')
 		{
 			is_new_key = 0;
-			
+
 			free(data->env[i]);
 			break;
 		}
@@ -78,7 +78,7 @@ int env_set_key(char *key, char *value, data_of_program *data)
 int env_remove_key(char *key, data_of_program *data)
 {
 	int i, key_length = 0;
-	
+
 	if (key == NULL || data->env == NULL)
 		return (0);
 
@@ -90,7 +90,7 @@ int env_remove_key(char *key, data_of_program *data)
 		 data->env[i][key_length] == '=')
 		{
 			free(data->env[i]);
-			
+
 			i++;
 			for (; data->env[i]; i++)
 			{

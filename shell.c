@@ -10,14 +10,14 @@ int main(int argc, char *argv[], char *env[])
 {
 	data_of_program *data;
 	char *prompt = "";
-	
+
 	data_of_program data_struct;
 	data = &data_struct;
-	
+
 	initialise_data(data, argc, argv, env);
-	
+
 	signal(SIGINT, handle_ctrl_c);
-	
+
 	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO) && argc == 1)
 	{
 		errno = 2;
@@ -49,7 +49,7 @@ void handle_ctrl_c(int opr UNUSED)
 void initialise_data(data_of_program *data, int argc, char *argv[], char **env)
 {
 	int i = 0;
-	
+
 	data->program_name = argv[0];
 	data->input_line = NULL;
 	data->command_name = NULL;
@@ -80,7 +80,7 @@ void initialise_data(data_of_program *data, int argc, char *argv[], char **env)
 	}
 	data->env[i] = NULL;
 	env = data->env;
-	
+
 	data->alias_list = malloc(sizeof(char *) * 20);
 	for (i = 0; i < 20; i++)
 	{
@@ -96,12 +96,12 @@ void initialise_data(data_of_program *data, int argc, char *argv[], char **env)
 void syst_inf(char *prompt, data_of_program *data)
 {
 	int error_code = 0, string_len = 0;
-	
+
 	while (++(data->exec_counter))
 	{
 		_print(prompt);
 		error_code = string_len = _getline(data);
-		
+
 		if (error_code == EOF)
 		{
 			free_all_data(data);
