@@ -140,7 +140,7 @@ int builtin_help(data_of_program *data)
 int builtin_alias(data_of_program *data)
 {
 	int i = 0;
-	
+
 	if (data->tokens[1] == NULL)
 		return (print_alias(data, NULL));
 

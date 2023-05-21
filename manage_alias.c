@@ -72,7 +72,6 @@ char *get_alias(data_of_program *data, char *name)
  * @data: struct for the program's data
  * Return: num
  */
- 
 int set_alias(char *alias_string, data_of_program *data)
 {
 	int i, j;
@@ -91,7 +90,6 @@ int set_alias(char *alias_string, data_of_program *data)
 			break;
 		}
 
-	/* Iterates through the alias list and check for coincidence of the varname */
 	for (j = 0; data->alias_list[j]; j++)
 		if (str_compare(buffer, data->alias_list[j], i) &&
 			data->alias_list[j][i] == '=')
@@ -100,9 +98,9 @@ int set_alias(char *alias_string, data_of_program *data)
 			break;
 		}
 
-	/* add the alias */
+
 	if (temp)
-	{/* if the alias already exist */
+	{
 		buffer_add(buffer, "=");
 		buffer_add(buffer, temp);
 		data->alias_list[j] = str_duplicate(buffer);
