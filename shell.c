@@ -9,9 +9,11 @@
 int main(int argc, char *argv[], char *env[])
 {
 	data_of_program *data;
+
 	char *prompt = "";
 
 	data_of_program data_struct;
+
 	data = &data_struct;
 
 	initialise_data(data, argc, argv, env);
