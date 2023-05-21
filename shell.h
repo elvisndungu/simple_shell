@@ -14,7 +14,6 @@
 #include <fcntl.h>
 #include "macros.h"
 
-
 /*
  * STRUCTS START
  *

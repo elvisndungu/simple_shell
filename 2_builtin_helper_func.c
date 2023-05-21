@@ -17,7 +17,7 @@ int builtins_list(data_of_program *data)
 		{"unsetenv", builtin_unset_env},
 		{NULL, NULL}
 	};
-	
+
 	for (iterator = 0; options[iterator].builtin != NULL; iterator++)
 	{
 		if (str_compare(options[iterator].builtin, data->command_name, 0))

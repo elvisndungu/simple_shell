@@ -13,7 +13,7 @@ void free_recurrent_data(data_of_program *data)
 		free(data->input_line);
 	if (data->command_name)
 		free(data->command_name);
-	
+
 	data->input_line = NULL;
 	data->command_name = NULL;
 	data->tokens = NULL;
@@ -44,12 +44,12 @@ void free_all_data(data_of_program *data)
 void free_array_of_pointers(char **array)
 {
 	int i;
-	
+
 	if (array != NULL)
 	{
 		for (i = 0; array[i]; i++)
 			free(array[i]);
-		
+
 		free(array);
 		array = NULL;
 	}
@@ -68,13 +68,13 @@ void long_to_string(long number, char *string, int base)
 	int index = 0, inNegative = 0;
 	long cociente = number;
 	char letters[] = {"0123456789abcdef"};
-	
+
 	if (cociente == 0)
 		string[index++] = '0';
-	
+
 	if (string[0] == '-')
 		inNegative = 1;
-	
+
 	while (cociente)
 	{
 		if (cociente < 0)
@@ -85,7 +85,7 @@ void long_to_string(long number, char *string, int base)
 	}
 	if (inNegative)
 		string[index++] = '-';
-	
+
 	string[index] = '\0';
 	str_reverse(string);
 }
@@ -109,11 +109,11 @@ int _atoi(char *s)
 			sign *= +1;
 		s++;
 	}
-	
+
 	/*2 - extract the number */
 	while ('0' <= *s && *s <= '9' && *s != '\0')
 	{
-		
+
 		number = (number * 10) + (*s - '0');
 		s++;
 	}

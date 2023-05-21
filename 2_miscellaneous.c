@@ -56,7 +56,7 @@ void expand_variables(data_of_program *data)
 {
 	int i, j;
 	char line[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;
-	
+
 	if (data->input_line == NULL)
 		return;
 	buffer_add(line, data->input_line);
@@ -106,18 +106,18 @@ void expand_alias(data_of_program *data)
 {
 	int i, j, was_expanded = 0;
 	char line[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;
-	
+
 	if (data->input_line == NULL)
 		return;
-	
+
 	buffer_add(line, data->input_line);
-	
+
 	for (i = 0; line[i]; i++)
 	{
 		for (j = 0; line[i + j] && line[i + j] != ' '; j++)
 			expansion[j] = line[i + j];
 		expansion[j] = '\0';
-		
+
 		temp = get_alias(data, expansion);
 		if (temp)
 		{
@@ -147,7 +147,7 @@ void expand_alias(data_of_program *data)
 int buffer_add(char *buffer, char *str_to_add)
 {
 	int length, i;
-	
+
 	length = str_length(buffer);
 	for (i = 0; str_to_add[i]; i++)
 	{

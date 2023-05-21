@@ -11,7 +11,7 @@ int _getline(data_of_program *data)
 	static char *array_commands[10] = {NULL};
 	static char array_operators[10] = {'\0'};
 	ssize_t bytes_read, i = 0;
-	
+
 	/* check if doesnot exist more commands in the array */
 	/* and checks the logical operators */
 	if (!array_commands[0] || (array_operators[0] == '&' && errno != 0) ||
@@ -23,12 +23,12 @@ int _getline(data_of_program *data)
 			free(array_commands[i]);
 			array_commands[i] = NULL;
 		}
-		
+
 		/* read from the file descriptor int to buff */
 		bytes_read = read(data->file_descriptor, &buff, BUFFER_SIZE - 1);
 		if (bytes_read == 0)
 			return (-1);
-		
+
 		/* split lines for \n or ; */
 		i = 0;
 		do {
@@ -37,7 +37,7 @@ int _getline(data_of_program *data)
 			i = check_logic_ops(array_commands, i, array_operators);
 		} while (array_commands[i++]);
 	}
-	
+
 	/*obtains the next command (command 0) and remove it for the array*/
 	data->input_line = array_commands[0];
 	for (i = 0; array_commands[i]; i++)
@@ -45,7 +45,7 @@ int _getline(data_of_program *data)
 		array_commands[i] = array_commands[i + 1];
 		array_operators[i] = array_operators[i + 1];
 	}
-	
+
 	return (str_length(data->input_line));
 }
 
@@ -60,8 +60,7 @@ int check_logic_ops(char *array_commands[], int i, char array_operators[])
 {
 	char *temp = NULL;
 	int j;
-	
-	/* checks for the & char in the command line*/
+
 	for (j = 0; array_commands[i] != NULL  && array_commands[i][j]; j++)
 	{
 		if (array_commands[i][j] == '&' && array_commands[i][j + 1] == '&')
@@ -101,14 +100,14 @@ void tokenize(data_of_program *data)
 {
 	char *delimiter = " \t";
 	int i, j, counter = 2, length;
-	
+
 	length = str_length(data->input_line);
 	if (length)
 	{
 		if (data->input_line[length - 1] == '\n')
 			data->input_line[length - 1] = '\0';
 	}
-	
+
 	for (i = 0; data->input_line[i]; i++)
 	{
 		for (j = 0; delimiter[j]; j++)
@@ -117,7 +116,7 @@ void tokenize(data_of_program *data)
 				counter++;
 		}
 	}
-	
+
 	data->tokens = malloc(counter * sizeof(char *));
 	if (data->tokens == NULL)
 	{
@@ -144,7 +143,7 @@ char *_strtok(char *line, char *delim)
 	int j;
 	static char *str;
 	char *copystr;
-	
+
 	if (line != NULL)
 		str = line;
 	for (; *str != '\0'; str++)

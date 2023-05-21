@@ -9,7 +9,7 @@
 int count_characters(char *string, char *character)
 {
 	int i = 0, counter = 0;
-	
+
 	for (; string[i]; i++)
 	{
 		if (string[i] == character[0])
@@ -50,9 +50,9 @@ int _printe(char *string)
 int _print_error(int errorcode, data_of_program *data)
 {
 	char n_as_string[10] = {'\0'};
-	
+
 	long_to_string((long) data->exec_counter, n_as_string, 10);
-	
+
 	if (errorcode == 2 || errorcode == 3)
 	{
 		_printe(data->program_name);
@@ -96,10 +96,10 @@ int _print_error(int errorcode, data_of_program *data)
 int str_length(char *string)
 {
 	int length = 0;
-	
+
 	if (string == NULL)
 		return (0);
-	
+
 	while (string[length++] != '\0')
 	{
 	}
