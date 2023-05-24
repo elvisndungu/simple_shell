@@ -4,6 +4,7 @@
  * @data: struct for the program's data
  * Return: num
  */
+
 int builtin_env(data_of_program *data)
 {
 	int i;

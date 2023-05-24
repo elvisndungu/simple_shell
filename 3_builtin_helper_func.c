@@ -1,9 +1,11 @@
 #include "shell.h"
+
 /**
  * builtin_exit - exit of the program with the status
  * @data: struct for the program's data
  * Return: num
  */
+
 int builtin_exit(data_of_program *data)
 {
 	int i;

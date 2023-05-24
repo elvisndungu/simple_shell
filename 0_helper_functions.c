@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * free_recurrent_data - free the flds needed each loop
  * @data: struct of the program's data
